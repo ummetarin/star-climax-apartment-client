@@ -1,9 +1,10 @@
+import Nav from "./Nav";
 
 
 const Home = () => {
     return (
         <div>
-            Home
+            <Nav></Nav>
         </div>
     );
 };
