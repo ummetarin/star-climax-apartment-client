@@ -1,8 +1,14 @@
+import All from "./All";
+import Allsec from "./Allsec";
 
 const Allproperty = () => {
     return (
         <div>
-            all
+            <All></All>
+            <div>
+               
+                <Allsec></Allsec>
+            </div>
         </div>
     );
 };

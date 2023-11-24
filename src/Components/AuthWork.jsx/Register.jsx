@@ -1,12 +1,13 @@
 import Nav from "../Home/Nav";
 
 
+
 const Register = () => {
     return (
-        <div >
-            <div className="bg-blue-500 text-white">
-                <Nav></Nav>
-            </div>
+        <div  className="">
+           <div className="">
+            <Nav></Nav>
+           </div>
 
     <div className="flex md:flex-row flex-col-reverse justify-center items-center md:gap-36">
              

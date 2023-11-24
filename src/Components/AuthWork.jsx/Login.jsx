@@ -4,9 +4,10 @@ import Nav from "../Home/Nav";
 const Login = () => {
     return (
         <div >
-        <div className="bg-blue-500 text-white">
+          <div>
             <Nav></Nav>
-        </div>
+          </div>
+       
 
          <div className="flex md:flex-row items-center justify-center flex-col-reverse md:gap-40 ">
          <div>
