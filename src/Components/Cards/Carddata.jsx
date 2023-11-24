@@ -12,7 +12,7 @@ const Carddata = () => {
            .then(result => {
             setData(result)
             const absData = result.filter(item => item.Category === "Ads");
-            console.log(absData);
+            // console.log(absData);
             setFilter(absData);
            });
            

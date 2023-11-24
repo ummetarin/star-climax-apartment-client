@@ -1,0 +1,30 @@
+[
+    {
+      "revname": "Alex Turner",
+      "review": "Beautiful design, very satisfied with my purchase!",
+      "Time": "2023-11-25T09:30:00",
+      "Category": "Furniture",
+      "Status": "Approved",
+      "RID": "REV56789",
+      "Image": "https://i.ibb.co/dbScMkm/f3.jpg"
+    },
+    {
+      "revname": "Emily Parker",
+      "review": "The product quality is excellent, but shipping was delayed.",
+      "Time": "2023-11-25T13:15:00",
+      "Category": "Appliances",
+      "Status": "Pending",
+      "RID": "REV98765",
+      "Image": "https://i.ibb.co/ZTZZVBb/f2.jpg"
+    },
+    {
+      "revname": "Daniel Miller",
+      "review": "Unsatisfactory experience, the item did not match the description.",
+      "Time": "2023-11-25T17:00:00",
+      "Category": "Clothing",
+      "Status": "Rejected",
+      "RID": "REV45678",
+      "Image": "https://i.ibb.co/GRGFJwm/f1.jpg"
+    }
+  ]
+  

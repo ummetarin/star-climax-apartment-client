@@ -1,7 +1,7 @@
 
 
 const Card = ({data}) => {
-    console.log(data);
+    // console.log(data);
 
     const{Proname,Proloc,priceto,priceFr,Protitle,Image,Category,ID,Status,Agentname,AgIm}=data||{};
 

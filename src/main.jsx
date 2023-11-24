@@ -15,6 +15,7 @@ import Myprofile from './Components/Myprop/Myprofile';
 import Wishlist from './Components/Wishlist/Wishlist';
 import Property from './Components/Property/Property';
 import Reviews from './Reviews/Reviews';
+import AuthProvider from './Components/AuthWork.jsx/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router}></RouterProvider>
+<AuthProvider>
+<RouterProvider router={router}></RouterProvider>
+</AuthProvider>
   </React.StrictMode>,
 )

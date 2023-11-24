@@ -2,6 +2,7 @@
 import Carddata from "../Cards/Carddata";
 import Other from "../Other/Other";
 import Otherdata from "../Other/Otherdata";
+import Reviewdata from "../Review/Reviewdata";
 import Banner from "./Banner";
 import Nav from "./Nav";
 
@@ -18,6 +19,7 @@ const Home = () => {
             <Other></Other>
             <Carddata></Carddata>
             <Otherdata></Otherdata>
+            <Reviewdata></Reviewdata>
           
         </div>
     );
