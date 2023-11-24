@@ -3,8 +3,10 @@ import Nav from "../Home/Nav";
 
 const All = () => {
     return (
-        <div>
-          <Nav></Nav>
+        <div className="">
+         <div className="">
+                <Nav></Nav>
+         </div>
 
          <div className="flex flex-row justify-center gap-8  mb-24 data3 items-center bg-fixed  ">
             <div>

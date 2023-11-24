@@ -31,7 +31,7 @@ const Carddata = () => {
                 <p>Welcome to [STAR Climax] Advertisement Showcase! In this specially curated section, we bring you a blend of engaging content and valuable promotions to enhance your experience. Explore a mix of captivating advertisements that highlight the latest offerings, promotions, and updates from our company</p>
                </div>
             
-         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  justify-center md:gap-16 gap-7 md:mt-24">
+         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto items-center  justify-center md:gap-16 gap-7 md:mt-24">
             {
             filter.map(item => <Card  key={item.Id} data={item}></Card>)
             }
