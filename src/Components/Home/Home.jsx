@@ -2,6 +2,7 @@
 import Carddata from "../Cards/Carddata";
 import Other from "../Other/Other";
 import Otherdata from "../Other/Otherdata";
+import Otheresc from "../Other/Otheresc";
 import Reviewdata from "../Review/Reviewdata";
 import Banner from "./Banner";
 import Nav from "./Nav";
@@ -17,6 +18,7 @@ const Home = () => {
        
             <Banner></Banner>
             <Other></Other>
+            <Otheresc></Otheresc>
             <Carddata></Carddata>
             <Otherdata></Otherdata>
             <Reviewdata></Reviewdata>
