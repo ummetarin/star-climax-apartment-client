@@ -16,6 +16,7 @@ import Wishlist from './Components/Wishlist/Wishlist';
 import Property from './Components/Property/Property';
 import Reviews from './Reviews/Reviews';
 import AuthProvider from './Components/AuthWork.jsx/AuthProvider';
+import Details from './Components/Details/Details';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         path:"/rev",
         element:<Reviews></Reviews>
 
+      },{
+        path:"/roomdata/:id",
+        element:<Details></Details>,
+        loader:({params})=>fetch(`http://localhost:3000/roomdata/${params.id}`)
       }
     ]
   },

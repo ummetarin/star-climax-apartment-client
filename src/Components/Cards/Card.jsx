@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Card = ({data}) => {
@@ -19,7 +20,7 @@ const Card = ({data}) => {
   <div className="card-footer ">
     <span className="text-xl text-amber-600 font-bold">${data.priceto}-{data.priceFr}</span>
     <div className="text-sm text-red-950 font-bold">
-      <button className="btn bg-yellow-600 text-white hover:bg-amber-300">Details</button>
+    <Link to={`/roomdata/${ID}`}><button className="btn bg-yellow-600 text-white hover:bg-amber-300">Details</button></Link>
     </div>
   </div></div>
 
