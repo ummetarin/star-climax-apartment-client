@@ -64,7 +64,7 @@ const Register = () => {
     <img src="https://i.ibb.co/SRsf7fW/sec-removebg-preview.png" alt="" />
            </div>
            <div>
-    <form className="form" onSubmit={handleresister}>
+    <form className="form mt-24 mb-24" onSubmit={handleresister}>
   <p className="title">Register </p>
   <p className="message">Signup now and get full access to our app. </p>
   <div className="flex">

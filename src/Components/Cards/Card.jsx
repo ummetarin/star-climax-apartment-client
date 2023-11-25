@@ -7,13 +7,14 @@ const Card = ({data}) => {
 
 
     return (
-  <div className="card">
+  <div className="h-[500px] w-[395px] ">
   <div >
     <img className="h-[250px] w-[450px] rounded-lg hover:translate-y-3" src={data.Image} alt="" />
   </div>
   <div className="card-info">
     <p className="text-2xl text-amber-950 font-bold">{data.Proloc} </p>
     <p className="text-body">{data.Proname}</p>
+    <p className="text-xl font-bold mt-2 mb-4  text-blue-900">{data.Status}</p>
   </div>
   <div className="card-footer ">
     <span className="text-xl text-amber-600 font-bold">${data.priceto}-{data.priceFr}</span>

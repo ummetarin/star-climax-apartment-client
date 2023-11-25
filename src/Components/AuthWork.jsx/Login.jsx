@@ -55,8 +55,8 @@ const Login = () => {
          <div>
            <img className="h-[400px] w-[430px]" src="https://i.ibb.co/gZxYBp4/login-removebg-preview.png" alt="" />
        </div>
-       <div>
-  <div className="container">
+       <div className="mt-9 mb-24">
+  <div className="container ">
     <div className="heading">Please Login</div>
     <form onSubmit={handlelogin} action className="form">
       <input required className="input" type="email" name="email" id="email" placeholder="E-mail" />

@@ -1,4 +1,5 @@
 import All from "./All";
+import AllCard from "./AllCard";
 import Allsec from "./Allsec";
 
 const Allproperty = () => {
@@ -8,6 +9,9 @@ const Allproperty = () => {
             <div>
                
                 <Allsec></Allsec>
+            </div>
+            <div>
+                <AllCard></AllCard>
             </div>
         </div>
     );
