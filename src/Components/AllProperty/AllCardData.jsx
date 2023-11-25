@@ -20,7 +20,7 @@ const AllCardData = ({data}) => {
   <div className="card-footer ">
     <span className="text-xl text-amber-600 font-bold ml-3">${data.priceto}-{data.priceFr}</span>
     <div className="text-sm text-red-950 font-bold">
-    <Link to={`/roomdata/${ID}`}><button className="btn bg-yellow-600 text-white hover:bg-amber-300">Details</button></Link>
+    <Link to={`/roomdata/${ID}`}><button className="btn bg-blue-600 text-white hover:bg-amber-300">Details</button></Link>
     </div>
   </div></div>
         </div>
