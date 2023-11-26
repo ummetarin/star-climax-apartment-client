@@ -14,11 +14,16 @@ const Myprofile = () => {
                <div>
                <img className="w-[300px] h-[250px] rounded-3xl" src={user?.photoURL} alt="" />
                </div>
-                <div className="text-2xl text-blue-900 font-bold ">
-               <h1 className="mb-3"> Name:{user?.displayName}</h1>
-              <h1>   Email:{user?.email}</h1>
-              <h1>Status</h1>
-              <button className="text-sm bg-red-900 text-white btn mt-3">Edit Profile</button>
+                <div className=" text-blue-900 font-bold ">
+              
+              <h1 className="w-[400px] h-[100px] bg-pink-300 shadow-lg text-black justify-center flex items-center">  Name:{user?.displayName} </h1>
+              <h1 className="w-[400px] h-[100px] mt-4   bg-blue-300 shadow-lg text-black justify-center flex items-center">  Email:{user?.email} </h1>
+           
+              <h1 className="w-[400px] h-[100px] mt-4  bg-red-300 shadow-lg text-black justify-center flex items-center">  Regular </h1>
+               <div className="items-center justify-center mx-auto  flex>">
+               <button className="text-sm bg-red-900 w-[400px] text-white btn mt-3 ">Edit Profile</button>
+                </div>           
+            
                 </div>
             </div>
            
