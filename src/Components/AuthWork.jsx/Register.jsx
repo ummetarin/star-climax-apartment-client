@@ -25,7 +25,15 @@ const Register = () => {
          });
          return;
        }
-  console.log(name,email,password,Image);
+  else{
+    // console.log(name,email,password,Image);
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Loged in',
+    showConfirmButton: false,
+    timer: 1500
+  })
   
   createUser(email,password)
   .then(result=>{
@@ -34,6 +42,7 @@ const Register = () => {
   })
   .catch(error=>console.log(error))
 
+  }
   }
 
   const handlegogle=()=>{
