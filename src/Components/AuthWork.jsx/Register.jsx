@@ -49,7 +49,7 @@ const Register = () => {
    Googlesignin().then((result)=>{
     console.log(result.user);
     Swal.fire({
-     position: 'top-end',
+     position: 'top-center',
      icon: 'success',
      title: 'Loged in',
      showConfirmButton: false,

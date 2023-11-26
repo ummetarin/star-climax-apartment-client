@@ -44,15 +44,31 @@ const Login = () => {
    console.log(user);
   })
   .catch(err=>console.log(err));
+  Swal.fire({
+    position: 'top-center',
+    icon: 'success',
+    title: 'Loged in',
+    showConfirmButton: false,
+    timer: 1500
   
 
- }
+ })
   }
 
   const handlegogle=()=>{
     Googlesignin().then((result)=>{
      console.log(result.user);
-     alert("loged")
+   
+
+     Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Loged in',
+      showConfirmButton: false,
+      timer: 1500
+    
+  
+   })
 
     })
   }
