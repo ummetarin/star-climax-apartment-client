@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Reviews from "../../Reviews/Reviews";
+
 import Reviwe from "./Reviwe";
 
 

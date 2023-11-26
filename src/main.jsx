@@ -17,6 +17,10 @@ import Property from './Components/Property/Property';
 import Reviews from './Reviews/Reviews';
 import AuthProvider from './Components/AuthWork.jsx/AuthProvider';
 import Details from './Components/Details/Details';
+import GiveRev from './Components/GiveReview/GiveRev';
+import DesCart from './Components/DashBoard/DesCart';
+import MyReview from './Components/DashBoard/MyReview';
+import Propertyb from './Components/DashBoard/Propertyb';
 
 const router = createBrowserRouter([
   {
@@ -34,20 +38,8 @@ const router = createBrowserRouter([
         element:<Login></Login>
       },
       {
-        path:"/des",
-        element:<Dashboard></Dashboard>
-      },{
         path:"/all",
         element:<Allproperty></Allproperty>
-      },{
-        path:"/myP",
-        element:<Myprofile></Myprofile>
-      },{
-        path:"/wish",
-        element:<Wishlist></Wishlist>
-      },{
-        path:"/property",
-        element:<Property></Property>
       },{
         path:"/rev",
         element:<Reviews></Reviews>
@@ -56,9 +48,41 @@ const router = createBrowserRouter([
         path:"/roomdata/:id",
         element:<Details></Details>,
         loader:({params})=>fetch(`http://localhost:3000/roomdata/${params.id}`)
+      },{
+        path:"/roomdata/:id",
+        element:<GiveRev></GiveRev>,
+        loader:({params})=>fetch(`http://localhost:3000/roomdata/${params.id}`)
+        
+      }
+    ],
+  },
+  {
+    path:"/des",
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:"/des/cart",
+        element:<DesCart></DesCart>
+
+      },
+      {
+        path:"/des/myP",
+        element:<Myprofile></Myprofile>
+
+      },
+      {
+        path:"/des/wishdata",
+        element:<Wishlist></Wishlist>
+      },{
+        path:"/des/rev",
+        element:<MyReview></MyReview>
+      },{
+        path:"/des/prob",
+        element:<Propertyb></Propertyb>
+
       }
     ]
-  },
+  }
 ]);
 
 

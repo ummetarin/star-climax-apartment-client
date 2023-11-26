@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Nav = () => {
@@ -15,12 +15,11 @@ const Nav = () => {
                <NavLink to={'/all'}>  <li>All Product</li></NavLink>
                <NavLink to={'/res'}><li>Register</li></NavLink>
                <details className="dropdown">
-                    <summary className="">Dashboard</summary>
-                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                      <li><a>My Profile</a></li>
-                      <li><a>Wishlist</a></li>
-                      <li><a>Property bought</a></li>
-                      <li><a>My Reviews</a></li>
+                
+                    <summary className=""><Link to={'/des'}>Dashboard</Link></summary>
+                     <ul className="p-2  text-black font-bold dropdown-content z-[1] opacity-hidden rounded-box w-52">
+                    
+                      
                      </ul>
                </details>
              </ul>
@@ -37,9 +36,9 @@ const Nav = () => {
              
              <NavLink to={'/res'}><li>Register</li></NavLink>
              <details className="dropdown">
-                    <summary className="">Dashboard</summary>
-                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                     <li><a>My Profile</a></li>
+             <summary className=""><Link to={'/des'}>Dashboard</Link></summary>
+                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 text-black font-bold rounded-box w-52">
+                     <Link to={'/myP'}><li><a>My Profile</a></li></Link>
                       <li><a>Wishlist</a></li>
                       <li><a>Property bought</a></li>
                       <li><a>My Reviews</a></li>

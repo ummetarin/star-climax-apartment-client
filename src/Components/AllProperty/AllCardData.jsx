@@ -8,13 +8,19 @@ const AllCardData = ({data}) => {
 
     return (
         <div>
+
+         <div>
+
+         </div>
+
             <div className="h-[500px] w-[400px] bg-slate-50 ">
   <div >
     <img className="h-[250px] w-[450px] p-4 rounded-lg hover:translate-y-3" src={data.Image} alt="" />
   </div>
   <div className="card-info">
+  <p className="text-body  text-amber-950 font-bold ml-3">{data.Proname}</p>
     <p className="text-2xl text-amber-950 font-bold ml-3">{data.Proloc} </p>
-    <p className="text-body ml-3">{data.Proname}</p>
+   
     <p className="text-xl font-bold mt-2 mb-4 ml-3  text-blue-900">{data.Status}</p>
   </div>
   <div className="card-footer ">
