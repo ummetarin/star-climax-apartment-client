@@ -4,10 +4,7 @@ import AllCardData from "./AllCardData";
 
 const AllCard = () => {
     const [data, setData] = useState([]);
-    const[filter,setFilter]=useState([]);
-    const [searchTerm, setSearchTerm] = useState("");
-    const [sortDirection, setSortDirection] = useState("asc");
-
+    
 
 
     useEffect(() => {
@@ -21,6 +18,11 @@ const AllCard = () => {
            });
            
      }, []);
+
+     const[filter,setFilter]=useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [sortDirection, setSortDirection] = useState("asc");
+
 
      const filteredData = filter.filter(item =>
         item.Proname.toLowerCase().includes(searchTerm.toLowerCase())

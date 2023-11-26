@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const GiveRev = () => {
     const data=useLoaderData();
+    const{Proname,Proloc,priceto,priceFr,Protitle,Image,Category,ID,Status,Agentname,AgIm}=data||{};
 
  
 
@@ -14,12 +15,27 @@ const GiveRev = () => {
         e.preventDefault();
      const form=e.target;
      const name=form.name.value;
-     const email=form.email.value;
      const Id=form.Id.value;
-     const Image=form.Image.value;
+     const email=form.email.value;
      const textarea=form.textarea.value;
+     const review={
+
+         revname:name,
+         revemail:email,
+         textarea:textarea,
+         RoomNumber:Id,
+         Proname,Proloc,priceto,priceFr,Protitle,Image,Category,ID,Status,Agentname,AgIm
+
+
+     }
     
        if(data.ID!=Id){
+
+       
+      
+
+
+
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -29,6 +45,23 @@ const GiveRev = () => {
 
        }
        else{
+       console.log(review);
+
+        fetch('http://localhost:3000/revdata',{
+
+        method:'POST',
+        headers:{
+          'content-type':"application/json"
+      
+        },
+        body:JSON.stringify(review)
+        }
+        )
+        .then(res=>res.json())
+        .then(data=>{
+      
+          console.log(data);
+        })
            Swal.fire({
            position: "top-center",
            icon: "success",
@@ -69,13 +102,14 @@ const GiveRev = () => {
       <input type="text" name="name" required />
     </div>
     <div className="form-group">
-      <label htmlFor="email">Appertment Number</label>
-      <input type="password"  name="Id" required />
+      <label htmlFor="email">The Room Number </label>
+      <input type="password" name="Id" required />
     </div>
     <div className="form-group">
-      <label htmlFor="email">Reviewer Photo</label>
-      <input type="text"  name="Image" required />
+      <label htmlFor="email">Time</label>
+      <input type="time" name="time" required />
     </div>
+   
     <div className="form-group">
       <label htmlFor="textarea">Give Review About This appertment?</label>
       <textarea name="textarea" id="textarea" rows={10} cols={50} required defaultValue={"          "} />

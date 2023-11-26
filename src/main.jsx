@@ -21,6 +21,7 @@ import GiveRev from './Components/GiveReview/GiveRev';
 import DesCart from './Components/DashBoard/DesCart';
 import MyReview from './Components/DashBoard/MyReview';
 import Propertyb from './Components/DashBoard/Propertyb';
+import Addwishlishform from './Components/ADDWIsHList/Addwishlishform';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         element:<GiveRev></GiveRev>,
         loader:({params})=>fetch(`http://localhost:3000/roomdata/${params.id}`)
         
+      },{
+        path:"/bookdata/:id",
+        element:<Addwishlishform></Addwishlishform>,
+        loader:({params})=>fetch(`http://localhost:3000/roomdata/${params.id}`)
       }
     ],
   },

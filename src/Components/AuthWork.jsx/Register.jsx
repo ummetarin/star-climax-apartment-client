@@ -10,12 +10,13 @@ const Register = () => {
   
 
   const handleresister=e=>{
-     e.preventDefault();
+    e.preventDefault();
   const form=e.target;
   const name=form.name.value;
   const email=form.email.value;
   const password=form.password.value;
   const Image =form.Image.value;
+  
   if (password.length <6 || /[A-Z]/.test(password) || /[!@#$%^&*()_+{}[\]:;<>,.?~\\]/.test(password)) {
          Swal.fire({
            icon: 'error',

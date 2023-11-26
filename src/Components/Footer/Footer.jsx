@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-blue-400 h-[400px] text-white">
+        <footer className="footer p-10 bg-blue-400 h-[350px] text-white">
   <nav>
     <header className="footer-title mt-8">Services</header> 
     <a className="link link-hover mt-6">Branding</a>

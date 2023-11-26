@@ -12,6 +12,12 @@ const Login = () => {
    const form=e.target;
    const email=form.email.value
    const password=form.password.value;
+   const name=form.name.value;
+   const userdata={
+    name:name,
+    email:email
+   
+  }
    if (password.length <6 || /[A-Z]/.test(password) || /[!@#$%^&*()_+{}[\]:;<>,.?~\\]/.test(password)) {
     Swal.fire({
       icon: 'error',
@@ -20,15 +26,27 @@ const Login = () => {
     });
     return;
   }
-   console.log(password,email);
-   Signin(email,password)
-   .then(res=>{
-    const user=res.user;
-    console.log(user);
-   })
-   .catch(err=>console.log(err));
-   
+ else{
+  fetch('http://localhost:3000/user',{
 
+  method:'POST',
+  headers:{
+    'content-type':"application/json"
+
+  },
+  body:JSON.stringify(userdata)
+  })
+
+  console.log(password,email);
+  Signin(email,password)
+  .then(res=>{
+   const user=res.user;
+   console.log(user);
+  })
+  .catch(err=>console.log(err));
+  
+
+ }
   }
 
   const handlegogle=()=>{
@@ -59,6 +77,7 @@ const Login = () => {
   <div className="container ">
     <div className="heading">Please Login</div>
     <form onSubmit={handlelogin} action className="form">
+    <input required className="input" type="text" name="name"  placeholder="Name" />
       <input required className="input" type="email" name="email" id="email" placeholder="E-mail" />
       <input required className="input" type="password" name="password" id="password" placeholder="Password" />
       <input className="login-button" type="submit" defaultValue="Sign In" />
