@@ -23,6 +23,10 @@ import MyReview from './Components/DashBoard/MyReview';
 import Propertyb from './Components/DashBoard/Propertyb';
 import Addwishlishform from './Components/ADDWIsHList/Addwishlishform';
 import Offer from './Components/Offer/Offer';
+import UserAll from './Components/Admin/UserAll';
+import AdminProfile from './Components/AWorkAdmin/AdminProfile';
+import AdminProperties from './Components/AWorkAdmin/AdminProperties';
+import AdminReviews from './Components/AWorkAdmin/AdminReviews';
 
 const router = createBrowserRouter([
   {
@@ -89,6 +93,21 @@ const router = createBrowserRouter([
       },{
         path:"/des/wish/offer",
         element:<Offer></Offer>
+      },{
+        // admin
+        path:"/des/userall",
+        element:<UserAll></UserAll>
+      },{
+        path:"/des/ad/pro",
+        element:<AdminProfile></AdminProfile>,
+
+      },
+      {
+        path:"/des/ad/prort",
+        element:<AdminProperties></AdminProperties>
+      },{
+        path:"/des/ad/rev",
+        element:<AdminReviews></AdminReviews>
       }
     ]
   }
