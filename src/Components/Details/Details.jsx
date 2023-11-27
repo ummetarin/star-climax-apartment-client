@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Nav from "../Home/Nav";
 import GiveRev from "../GiveReview/GiveRev";
+import Dataforreviewuse from "../GiveReview/Dataforreviewuse";
 
 
 const Details = () => {
@@ -31,10 +32,23 @@ const Details = () => {
               <Link to={`/bookdata/${data.ID}`}> <button  className="btn bg-rose-800 text-white mt-6">Add To  Wishlist</button></Link>
             </div>
           </div>
-
           <div>
+          <div className="flex flex-row justify-center ">
+                <h1 className=" text-4xl font-bold  text-pink-900 ">Give Review About Our Appertment </h1>
+                <img className="w-36 " src="https://i.ibb.co/cr4vdRt/png-transparent-cbs-news-logo-graphic-designer-occupation-people-television-logo-monochrome-removebg.png" alt="" />
+            </div> 
+            <div>
+                <p className="text-xl text-center font-bold px-10 mt-4 md:mb-16 ">A reviewer should provide suggestions and recommendations for revisions, identify additional work needed or necessary for consideration, and/or make clarifications that would enhance the quality of the manuscript.</p>
+            </div>
+            
+          </div>
+
+          <div className="flex md:flex-row flex-col justify-around">
           <div>
                 <GiveRev></GiveRev>
+            </div>
+            <div className="md:mt-24">
+                  <Dataforreviewuse></Dataforreviewuse>
             </div>
           </div>
            

@@ -14,7 +14,7 @@ const Nav = () => {
      Swal.fire({
       position: 'top-center',
       icon: 'success',
-      title: 'Loged in',
+      title: 'Log Out',
       showConfirmButton: false,
       timer: 1500
     

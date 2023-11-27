@@ -6,7 +6,7 @@ import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
 
-  const{ Signin,Googlesignin,user }=useContext(AuthContext);
+  const{ Signin,Googlesignin, user }=useContext(AuthContext);
 
   const handlelogin= e =>{
     e.preventDefault();
@@ -61,8 +61,8 @@ const Login = () => {
     Googlesignin().then((result)=>{
      console.log(result.user);
      const userdata={
-      name:user?.displayName,
-      email:user?.email
+      name:result.user?.displayName,
+      email:result.user?.email
     }
     // console.log(userdata);
 

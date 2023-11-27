@@ -22,6 +22,7 @@ import DesCart from './Components/DashBoard/DesCart';
 import MyReview from './Components/DashBoard/MyReview';
 import Propertyb from './Components/DashBoard/Propertyb';
 import Addwishlishform from './Components/ADDWIsHList/Addwishlishform';
+import Offer from './Components/Offer/Offer';
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,9 @@ const router = createBrowserRouter([
         path:"/des/prob",
         element:<Propertyb></Propertyb>
 
+      },{
+        path:"/des/wish/offer",
+        element:<Offer></Offer>
       }
     ]
   }

@@ -16,8 +16,8 @@ const DataOfWishlist = ({data}) => {
   <div className="card-footer ">
     <span className="text-xl text-amber-600 font-bold">${data.priceto}-{data.priceFr}</span>
     <div className="text-sm text-red-950 font-bold">
-    <Link to={`/`}><button className="btn bg-yellow-600 text-white hover:bg-amber-300">Delete</button></Link>
-    <Link to={`/`}><button className="btn bg-yellow-600 text-white hover:bg-amber-300">Offer</button></Link>
+    <Link to={'/des/wish/offer'}><button className="btn bg-red-700 text-white hover:bg-red-500">OFFER</button></Link>
+    <Link to={`/`}><button className="btn bg-pink-500 text-white hover:bg-amber-300">Delete</button></Link>
     </div>
   </div></div>
     );

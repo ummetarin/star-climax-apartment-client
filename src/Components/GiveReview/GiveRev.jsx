@@ -1,13 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../AuthWork.jsx/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+
+
+
+
+
 
 const GiveRev = () => {
     const data=useLoaderData();
     const{Proname,Proloc,priceto,priceFr,Protitle,Image,Category,ID,Status,Agentname,AgIm}=data||{};
 
- 
+
 
     const{ user }=useContext(AuthContext);
 
@@ -18,8 +23,9 @@ const GiveRev = () => {
      const Id=form.Id.value;
      const email=form.email.value;
      const textarea=form.textarea.value;
+     const time=form.time.value;
      const review={
-
+         revtime:time,
          revname:name,
          revemail:email,
          textarea:textarea,
@@ -30,12 +36,6 @@ const GiveRev = () => {
      }
     
        if(data.ID!=Id){
-
-       
-      
-
-
-
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -59,7 +59,6 @@ const GiveRev = () => {
         )
         .then(res=>res.json())
         .then(data=>{
-      
           console.log(data);
         })
            Swal.fire({
@@ -80,13 +79,6 @@ const GiveRev = () => {
         <div>
 
             
-            <div className="flex flex-row justify-center items-center ">
-                <h1 className=" text-4xl font-bold  text-pink-900 ">Give Review About Our Appertment </h1>
-                <img className="w-36 " src="https://i.ibb.co/cr4vdRt/png-transparent-cbs-news-logo-graphic-designer-occupation-people-television-logo-monochrome-removebg.png" alt="" />
-            </div> 
-            <div>
-                <p className="text-xl text-center font-bold px-10 mt-4 md:mb-16 ">A reviewer should provide suggestions and recommendations for revisions, identify additional work needed or necessary for consideration, and/or make clarifications that would enhance the quality of the manuscript.</p>
-            </div>
             
 
            <div  className="flex md:flex-row flex-col  md:gap-24">
@@ -119,13 +111,8 @@ const GiveRev = () => {
 </div>
 
             </div>
-            <div>
-              
-                  <h1 className="text-4xl font-bold text-pink-900 md:mt-16">Reviews are:</h1>
+          
 
-
-               
-            </div>
 
            </div>
 

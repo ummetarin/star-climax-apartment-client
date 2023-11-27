@@ -9,7 +9,7 @@ const Dashboard = () => {
                 <Nav></Nav>
             </div> */}
            <div className="flex flex-row">
-           <div className="flex flex-col justify-center text-xl font-bold text-white min-h-screen w-[20%] bg-blue-300 shadow-lg items-center  ">
+           <div className="flex flex-col justify-center text-xl font-bold text-white min-h-screen w-[20%] bg-yellow-500 shadow-lg items-center  ">
            <h1 className="mt-4">  <NavLink to={'/des/wishdata'}>Wishlist</NavLink></h1>
             <h1 className="mt-4"> <NavLink to={'/des/myP'}>My Profile</NavLink></h1>
             <h1 className="mt-4">  <NavLink to={'/des/prob'}>Property Bought</NavLink></h1>
