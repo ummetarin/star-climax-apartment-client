@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Nav from "../Home/Nav";
 import { useContext } from "react";
 import { AuthContext } from "../AuthWork.jsx/AuthProvider";
@@ -95,8 +95,12 @@ const handleAddwishlish=e=>{
 <input type="time" name="date" defaultValue={user?.name} required />
 </div>
 
+<Link to={'/des/wishdata'}>
 
 <button className="btn bg-purple-500 text-white" type="submit">Add in Wislist</button>
+
+</Link>
+
 </form>
 </div>
 

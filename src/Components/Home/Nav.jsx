@@ -1,10 +1,30 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthWork.jsx/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Nav = () => {
+
+  const {user,LogOut}=useContext(AuthContext)
+  const handllogout=()=>{
+     LogOut()
+     .then(()=>{})
+     .catch(err=>console.log(err))
+     Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Loged in',
+      showConfirmButton: false,
+      timer: 1500
+    
+  
+   })
+  }
+
     return (
         <div className="navbar  py-4 shadow-sm  ">
-        <div className="flex md:flex-row gap-[200px] max-w-screen-xl  ">
+        <div className="flex md:flex-row gap-[100px] max-w-screen-xl  ">
         <div className="">
            <div className="dropdown">
              <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,7 +67,18 @@ const Nav = () => {
            </ul>
          </div>
          <div className=" ">
-        <NavLink to={'/login'}> <button className="btn text-xl ">Login</button></NavLink>
+         {
+    user?<div className='flex-col'> <div className="flex flex-row">
+      <button onClick={handllogout} className="btn bg-base-500 font-bold">LogOut</button> 
+    <img className='rounded-full h-12 w-12 md:ml-1 ml-7 md:mt-0 mt-6 ' src={user?.photoURL}></img>
+      </div>
+      <div>
+        <p className="text-sm font-bold">{user?.email}</p>
+      </div>
+      
+      </div>
+    :<Link to={'/login'}>  <button className="btn bg-base-500 font-bold">LOGIN</button></Link>
+   }
          
          </div>
         </div>

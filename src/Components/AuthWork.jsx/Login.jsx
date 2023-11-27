@@ -6,7 +6,8 @@ import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
 
-  const{ Signin,Googlesignin }=useContext(AuthContext);
+  const{ Signin,Googlesignin,user }=useContext(AuthContext);
+
   const handlelogin= e =>{
     e.preventDefault();
    const form=e.target;
@@ -54,10 +55,26 @@ const Login = () => {
 
  })
   }
+}
 
   const handlegogle=()=>{
     Googlesignin().then((result)=>{
      console.log(result.user);
+     const userdata={
+      name:user?.displayName,
+      email:user?.email
+    }
+    // console.log(userdata);
+
+    fetch('http://localhost:3000/user',{
+
+    method:'POST',
+    headers:{
+    'content-type':"application/json"
+
+   },
+    body:JSON.stringify(userdata)
+    })
    
 
      Swal.fire({
@@ -72,6 +89,7 @@ const Login = () => {
 
     })
   }
+
 
 
 
