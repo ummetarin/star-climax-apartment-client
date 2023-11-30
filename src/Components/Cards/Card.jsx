@@ -1,22 +1,29 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthWork.jsx/AuthProvider";
 
 
 const Card = ({data}) => {
     // console.log(data);
+    const{user}=useContext(AuthContext)
 
     const{Proname,Proloc,priceto,priceFr,Protitle,Image,Category,ID,Status,Agentname,AgIm}=data||{};
 
 
     return (
-  <div className="h-[500px] w-[395px] ">
+  <div className="mx-auto flex justify-center">
+    <div className="md:h-[500px] md:w-[395px] h-[550px] w-[300px]   ">
   <div >
-    <img className="h-[250px] w-[450px] rounded-lg hover:translate-y-3" src={data.Image} alt="" />
+    <img className="md:h-[250px] md:w-[450px] rounded-lg hover:translate-y-3" src={data.Image} alt="" />
   </div>
   <div className="card-info">
   <p className="text-body  text-amber-950 font-bold ml-3">{data.Proname}</p>
     <p className="text-2xl text-amber-950 font-bold ml-3">{data.Proloc} </p>
    
-    <p className="text-xl font-bold mt-2 mb-4 ml-3  text-blue-900">{data.Status}</p>
+    <div className="flex flex-row items-center mt-2 mb-2">
+      <img className="w-16 ml-4" src="https://i.ibb.co/T8MVxCP/128427807-fashion-logo-with-head-of-young-elegant-girl-female-pretty-face-in-profile-simple-sign-vec.png" alt="" />
+    <p className="text-xl font-bold mt-2 mb-4 ml-3  text-blue-900">Rifa</p>
+    </div>
   </div>
   <div className="card-footer ">
     <span className="text-xl text-amber-600 font-bold">${data.priceto}-{data.priceFr}</span>
@@ -25,6 +32,7 @@ const Card = ({data}) => {
     </div>
   </div></div>
 
+  </div>
     );
 };
 

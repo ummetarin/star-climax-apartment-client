@@ -1,34 +1,75 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthWork.jsx/AuthProvider";
 
 
-const Offer = () => {
+const Offer = ({data}) => {
+  const{Proname,Proloc,priceto,priceFr,Protitle,Image,Category,ID,Status,Agentname,AgIm}=data||{};
+  console.log(data);
+      
+  const{user}=useContext(AuthContext)
+
+   const handleoffer=e=>{
+    e.preventDefault();
+     const form=e.target;
+     const Protitle=form.Protitle.value;
+     const Proloc=form.Proloc.value;
+     const agnam=form.agnam.value;
+     const Buyername=form.Buyername.value;
+     const buyeremail=form.buyeremail.value;
+     const date=form.date.value;
+     const Offer={
+         Protitle:Protitle,
+         Proloc:Proloc,
+         agnam:agnam,
+         Buyername:Buyername,
+         buyeremail:buyeremail,
+         date:date,
+         priceto,
+         priceFr,
+         Image,
+         Category,ID,Status,
+
+
+     }
+    
+
+
+   }
+
+
+
     return (
         <div>
            <div  className="flex md:flex-row flex-col  md:gap-24">
            <div>
             <div className="form-container mt-10 mb-32 text-black font-bold">
-  <form  className="form">
+  <form onClick={handleoffer} className="form">
     <div className="form-group">
-      <label htmlFor="email">Company Email</label>
-      <input type="email"  name="email" required />
+      <label htmlFor="email">Property Tile</label>
+      <input type="text" defaultValue={data?.Protitle} name="Protitle" required />
     </div>
     <div className="form-group">
-      <label htmlFor="email">Name</label>
-      <input type="text" name="name" required />
+      <label htmlFor="email">Property Location</label>
+      <input type="text" name="Proloc" defaultValue={data?.Proloc} required />
     </div>
     <div className="form-group">
-      <label htmlFor="email">The Room Number </label>
-      <input type="password" name="Id" required />
+      <label htmlFor="email">Agent Name </label>
+      <input type="text" name="agname"  required />
     </div>
     <div className="form-group">
-      <label htmlFor="email">Time</label>
-      <input type="time" name="time" required />
+      <label htmlFor="email">Buyer Name</label>
+      <input type="text" name="Buyername" defaultValue={user?.name} required />
+    </div>
+    <div className="form-group">
+      <label htmlFor="email">Buyer Email</label>
+      <input type="email" name="buyeremail" defaultValue={user?.email} required />
+    </div>
+    <div className="form-group">
+      <label htmlFor="email">Buyer Date</label>
+      <input type="date" name="date" required />
     </div>
    
-    <div className="form-group">
-      <label htmlFor="textarea">Give Review About This appertment?</label>
-      <textarea name="textarea" id="textarea" rows={10} cols={50} required defaultValue={"          "} />
-    </div>
-    <button className="btn bg-purple-500 text-white" type="submit">Review</button>
+    <button className="btn bg-purple-500 text-white" type="submit">Give Offer</button>
   </form>
 </div>
 

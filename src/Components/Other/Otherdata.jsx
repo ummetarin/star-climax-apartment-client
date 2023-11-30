@@ -4,10 +4,10 @@ const Otherdata = () => {
     return (
         <div>
         <div className="flex flex-row justify-center items-center ">
-              <h1 className=" text-4xl font-bold  text-blue-800 underline"> Appertment Facilities</h1>
+              <h1 className=" text-xl md:text-4xl font-bold  text-blue-800 underline"> Appertment Facilities</h1>
               <img className="w-36" src="https://i.ibb.co/ZmZjjtn/lo.png" alt="" />
         </div>
-      <div className="px-16 text-xl text-green-800">
+      <div className="px-16 text-sm md:mb-1 mb-6 md:text-xl text-green-800">
               <p>Apartment amenities are the nonessential features or services provided to the residents of an apartment building. Examples in an apartment include gyms, pools, parking garages, laundry rooms, playgrounds, and dog parks.</p>
       </div>
 
@@ -20,7 +20,7 @@ const Otherdata = () => {
           </div>
          
           <div className="">
-              <img className="h-[400px] w-[450px]" src="https://i.ibb.co/1fb7mRv/la.jpg" alt="" />
+              <img className="md:h-[400px] h-[300px] w-[300px] md:w-[450px]" src="https://i.ibb.co/1fb7mRv/la.jpg" alt="" />
           </div>
          
        </div>

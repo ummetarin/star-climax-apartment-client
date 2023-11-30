@@ -77,44 +77,35 @@ const GiveRev = () => {
     return (
        
         <div>
+          <div>
+      <div className="flex flex-col items-center justify-center h-screen dark">
+  <div className="w-[600px] bg-white rounded-lg shadow-md p-6">
+    <h2 className="text-2xl font-bold text-black mb-4">GIVE REVIEW </h2>
+    <form onSubmit={handlereview} className="flex flex-wrap ">
+      <input type="email" defaultValue={user?.email} name="email" className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"  placeholder="Email" />
+      <input type="text"  name="name"  className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]" placeholder="Name" />
+      <input type="number"  name="Id" className="bg-pink-300 text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]" placeholder="The Room Number" />
+    
+      <input type="time"  name="time" className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]" placeholder="Time" />
+      
+      <input type="text" name="textarea" className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full h-44" placeholder="Give Review" />
+     
+     <div className="flex justify-center mx-auto ">
+     <button type="submit" className="bg-pink-600 btn text-white">
+        Review
+      </button>
+     </div>
+    </form>
+  </div>
 
-            
-            
 
-           <div  className="flex md:flex-row flex-col  md:gap-24">
-           <div>
-            <div className="form-container mt-10 mb-32 text-black font-bold">
-  <form onSubmit={handlereview} className="form">
-    <div className="form-group">
-      <label htmlFor="email">Company Email</label>
-      <input type="email" defaultValue={user?.email} name="email" required />
-    </div>
-    <div className="form-group">
-      <label htmlFor="email">Name</label>
-      <input type="text" name="name" required />
-    </div>
-    <div className="form-group">
-      <label htmlFor="email">The Room Number </label>
-      <input type="password" name="Id" required />
-    </div>
-    <div className="form-group">
-      <label htmlFor="email">Time</label>
-      <input type="time" name="time" required />
-    </div>
-   
-    <div className="form-group">
-      <label htmlFor="textarea">Give Review About This appertment?</label>
-      <textarea name="textarea" id="textarea" rows={10} cols={50} required defaultValue={"          "} />
-    </div>
-    <button className="btn bg-purple-500 text-white" type="submit">Review</button>
-  </form>
 </div>
 
-            </div>
-          
+          </div>
 
+            
+            
 
-           </div>
 
         </div>
 

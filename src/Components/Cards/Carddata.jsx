@@ -22,12 +22,12 @@ const Carddata = () => {
 
 
     return (
-        <div className="mt-24 mb-24">
-            <div className="flex flex-row justify-center items-center ">
-                <h1 className=" text-4xl font-bold  text-blue-800 underline">Advertisement Section</h1>
+        <div className="">
+            <div className="flex flex-row justify-center items-center mt-4 mb-4">
+                <h1 className=" md:text-4xl text-xl font-bold  text-blue-800 underline">Advertisement Section</h1>
                 <img className="w-36" src="https://i.ibb.co/kh8vVMC/log-removebg-preview.png" alt="" />
             </div>
-               <div className="px-10 text-center text-xl  text-red-950 font-bold">
+               <div className="px-10 text-center md:text-xl text-sm md:mb-1 mb-5  text-red-950 font-bold">
                 <p>Welcome to [STAR Climax] Advertisement Showcase! In this specially curated section, we bring you a blend of engaging content and valuable promotions to enhance your experience. Explore a mix of captivating advertisements that highlight the latest offerings, promotions, and updates from our company</p>
                </div>
             

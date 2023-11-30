@@ -12,7 +12,7 @@ import Nav from "./Nav";
 const Home = () => {
     return (
         <div className="">
-            <div className=" text-white mx-auto max-w-screen-xl fixed z-10 bg-black opacity-40">
+            <div className=" text-white mx-auto max-w-screen-xl md:w-[1600px] w-full  fixed z-10 bg-black opacity-40">
                 <Nav></Nav>
             </div>
        

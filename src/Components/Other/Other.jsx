@@ -3,16 +3,16 @@ const Other = () => {
     return (
         <div>
           <div className="flex flex-row justify-center items-center ">
-                <h1 className=" text-4xl font-bold  text-blue-800 underline">Introduction About My Appertment</h1>
+                <h1 className=" md:text-4xl text-sm font-bold  text-blue-800 underline">Introduction About My Appertment</h1>
                 <img className="w-36" src="https://i.ibb.co/ZmZjjtn/lo.png" alt="" />
           </div>
-        <div className="px-16 text-xl text-green-800">
+        <div className="px-16 md:mb-3 mb-7  text-sm md:text-xl text-green-800">
                 <p>An apartment or flat  is a place to live that is only part of a larger building. Usually it is a group of rooms on one floor of a building in a city, where land is too expensive for people to have separate houses. An apartment that people own is called a condominium or "condo"</p>
         </div>
 
          <div className="flex flex-row justify-center gap-8 md:mt-16 mb-24 data items-center bg-fixed  ">
             <div>
-                <img className="h-[400px] w-[450px]" src="https://i.ibb.co/z2fX1C3/bg.jpg" alt="" />
+                <img className="md:h-[400px] md:w-[450px] h-[200px] w-[200px]" src="https://i.ibb.co/z2fX1C3/bg.jpg" alt="" />
             </div>
             <div className="text-center text-white">
                  <h1 className="mt-4 font-bold text-3xl ">Welcome to my Appertment</h1>

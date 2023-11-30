@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 import {  GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../../firebase.config";
+import axios from "axios";
 
 // import axios from "axios";
 
@@ -45,19 +46,20 @@ const AuthProvider = ({children}) => {
            setUser(currentUser);
            console.log(currentUser);
            setLoading(false)
-           // if(currentUser){
+           if(currentUser){
+            const userInfo={email:currentUser.email};
              
-           //   axios.post("https://restaurentprojecttarin.vercel.app/jwt",logedUser,{ withCredentials :true})
-           //   .then(res=>{
-           //     console.log("tokn",res.data);
-           //   })
-           // }
-           // else{
-           //   axios.post("https://restaurentprojecttarin.vercel.app/logout",logedUser,{withCredentials:true})
-           //   .then(res=>{
-           //     console.log(res.data);
-           //   })
-           // }
+             axios.post("/jwt",userInfo)
+             .then(res=>{
+              if(res.data.token){
+                localStorage.setItem('access token',res.data.token);
+              }
+             })
+             
+           }
+           else{
+             localStorage.removeItem('accsess token');
+           }
            
        });
        return ()=>{

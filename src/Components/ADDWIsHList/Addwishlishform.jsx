@@ -4,6 +4,33 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthWork.jsx/AuthProvider";
 import Swal from "sweetalert2";
 
+{/* <div>
+<div className="flex flex-col items-center justify-center h-screen dark">
+<div className="w-[600px] bg-white rounded-lg shadow-md p-6">
+<h2 className="text-2xl font-bold text-black mb-4">GIVE REVIEW </h2>
+<form onSubmit={handlereview} className="flex flex-wrap ">
+<input type="email" defaultValue={user?.email} name="email" className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"  placeholder="Email" />
+<input type="text"  name="name"  className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]" placeholder="Name" />
+<input type="number"  name="Id" className="bg-pink-300 text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]" placeholder="The Room Number" />
+
+<input type="time"  name="time" className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]" placeholder="Time" />
+
+<input type="text" name="textarea" className="bg-pink-300  text-black border-0 rounded-md p-2 mb-4 focus:bg-pink-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full h-44" placeholder="Give Review" />
+
+<div className="flex justify-center mx-auto ">
+<button type="submit" className="bg-pink-600 btn text-white">
+  Review
+</button>
+</div>
+</form>
+</div>
+
+
+</div>
+
+    </div> */}
+
+
 
 const Addwishlishform = () => {
     const data=useLoaderData();
@@ -69,67 +96,43 @@ const handleAddwishlish=e=>{
             <div>
                 <Nav></Nav>
             </div>
-            <div className="text-3xl text-center font-bold text-red-950">
-               <h1 className="mt-16 mb-8">Add The Appertment in Wishlist</h1>
-              <div>
-             
+          
 
-              <div>
+            
+<div>
+<div className="flex flex-col items-center justify-center h-screen dark font-bold">
+<div className="w-[600px] bg-black rounded-lg shadow-md p-6">
+<h2 className="text-2xl font-bold text-white text-center mb-4"> Add in Wishlist </h2>
+<form onSubmit={handleAddwishlish} className="flex flex-wrap ">
+<input type="email" defaultValue={user?.email} name="email" className="bg-yellow-100  text-black border-0 rounded-md p-2 mb-4 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full  mr-[2%]"  placeholder="Email" />
+<input type="text"  name="name"  className="bg-yellow-100  text-black border-0 rounded-md p-2 mb-4 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full " placeholder="Name" />
+<input type="date"  name="date"  className="bg-yellow-100  text-black border-0 rounded-md p-2 mb-4focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full " placeholder="Date" />
+<div className="flex justify-center mx-auto mt-9 ">
 
-
-
-<div  className="flex justify-center items-center">
-
-<div className="form-container mt-10 mb-32 text-black font-bold">
-<form onSubmit={handleAddwishlish} className="form">
-<div className="form-group">
-<label htmlFor="email">USER Email</label>
-<input type="email"  name="email" defaultValue={user?.email} required />
-</div>
-<div className="form-group">
-<label htmlFor="email">USER NAME</label>
-<input type="text" name="name" defaultValue={user?.name} required />
-</div>
-<div className="form-group">
-<label htmlFor="email">Date</label>
-<input type="time" name="date" defaultValue={user?.name} required />
-</div>
-
-<Link to={'/des/wishdata'}>
-
-<button className="btn bg-purple-500 text-white" type="submit">Add in Wislist</button>
-
-</Link>
-
+<button type="submit" className="bg-blue-600 btn text-white">
+Add Wishlist
+</button>
+  </div>   
 </form>
 </div>
 
+
+</div>
+
+</div>
 </div>
 
 
 
-</div>
-
-
-
-
-
-
-              </div>
-
-
-
-
-
-
-
-
-            </div>
 
 
 
             
-        </div>
+
+
+
+            
+        
     );
 };
 

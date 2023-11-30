@@ -21,7 +21,7 @@ const Details = () => {
         
           <div className="flex md:flex-row flex-col font-bold  md:gap-8 mb-24 ">
           <div>
-                <img className="w-[700px] h-[500px] rounded-lg" src={data.Image} alt="" />
+                <img className="md:w-[700px] w-[400px] h-[300px] md:h-[500px] rounded-lg" src={data.Image} alt="" />
             </div>
             <div className="">
                 <h1  className="text-2xl text-pink-800  md:mt-12">The Room number is {data.ID}</h1>
@@ -33,22 +33,22 @@ const Details = () => {
             </div>
           </div>
           <div>
-          <div className="flex flex-row justify-center ">
-                <h1 className=" text-4xl font-bold  text-pink-900 ">Give Review About Our Appertment </h1>
+          <div className="flex md:flex-row flex-col justify-center  items-center ">
+                <h1 className=" md:text-4xl text-sm font-bold  text-pink-900 ">Give Review About Our Appertment </h1>
                 <img className="w-36 " src="https://i.ibb.co/cr4vdRt/png-transparent-cbs-news-logo-graphic-designer-occupation-people-television-logo-monochrome-removebg.png" alt="" />
             </div> 
             <div>
-                <p className="text-xl text-center font-bold px-10 mt-4 md:mb-16 ">A reviewer should provide suggestions and recommendations for revisions, identify additional work needed or necessary for consideration, and/or make clarifications that would enhance the quality of the manuscript.</p>
+                <p className="md:text-xl text-sm text-center font-bold px-10 mt-4 md:mb-16 ">A reviewer should provide suggestions and recommendations for revisions, identify additional work needed or necessary for consideration, and/or make clarifications that would enhance the quality of the manuscript.</p>
             </div>
             
           </div>
 
-          <div className="flex md:flex-row flex-col justify-around">
+          <div className="flex md:flex-row flex-col gap-24 justify-center">
           <div>
                 <GiveRev></GiveRev>
             </div>
-            <div className="md:mt-24">
-                  <Dataforreviewuse></Dataforreviewuse>
+            <div className="md:mt-24 md:mb-1 mb-8">
+                  <Dataforreviewuse id={ID}></Dataforreviewuse>
             </div>
           </div>
            

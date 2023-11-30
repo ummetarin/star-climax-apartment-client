@@ -4,74 +4,72 @@ import AllCardData from "./AllCardData";
 
 const AllCard = () => {
     const [data, setData] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [sortBy, setSortBy] = useState("");
     
 
 
     useEffect(() => {
-            fetch('http://localhost:3000/roomdata')
-           .then(res => res.json())
-           .then(result => {
-            setData(result)
-            const absData = result.filter(item => item.Status === "Available");
-            // console.log(absData);
-            setFilter(absData);
-           });
-           
-     }, []);
-
-     const[filter,setFilter]=useState([]);
-    const [searchTerm, setSearchTerm] = useState("");
-    const [sortDirection, setSortDirection] = useState("asc");
-
-
-     const filteredData = filter.filter(item =>
-        item.Proname.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-
-      const sortedData = filteredData.slice().sort((a, b) => {
-        const pronameA = a.Proname.toLowerCase();
-        const pronameB = b.Proname.toLowerCase();
-    
-        if (sortDirection === "asc") {
-          return pronameA.localeCompare(pronameB);
-        } else {
-          return pronameB.localeCompare(pronameA);
+      const fetchData = async () => {
+        // Construct the URL with query parameters for search and sorting
+        const url = `http://localhost:3000/agentdataforallcard?search=${searchQuery}&sortBy=${sortBy}`;
+        
+        try {
+          const response = await fetch(url);
+          const result = await response.json();
+          setData(result);
+        } catch (error) {
+          console.error("Failed to fetch data", error);
         }
-      });
-    
-      const toggleSortDirection = () => {
-        setSortDirection(sortDirection === "asc" ? "desc" : "asc");
       };
+  
+      fetchData();
+    }, [searchQuery, sortBy]);
+
+    const handleSearch = (e) => {
+      setSearchQuery(e.target.value);
+    };
+
+    const handleSort = (sortOption) => {
+      setSortBy(sortOption);
+    };
+    const sortByProname = () => {
+      const sortedData = [...data].sort((a, b) => a.Proname.localeCompare(b.Proname));
+      setData(sortedData);
+    };
+    const filteredData = data.filter((item) =>
+    item.Proname.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
 
     return (
         <div className=" mb-24">
              <div >
         
-        <div className="text-3xl text-center font-bold mb-3 text-purple-950 flex justify-center items-center">
-        <h1>All ROOM IN OUR APARTMENT</h1>
-        <img className="w-44" src="https://i.ibb.co/fdZXyBc/png-transparent-logo-building-business-sales-industry-building-angle-building-apartment-removebg-pre.png" alt="" />
+        <div className="md:text-4xl text-xl text-center font-bold mb-3 text-purple-950 flex md:flex-row flex-col justify-center items-center">
+        <h1 className="underline">All ROOM IN OUR APARTMENT</h1>
+        <img className="w-44" src="https://i.ibb.co/FWMsgFn/png-transparent-real-estate-logo-home-building-home-building-text-logo-removebg-preview.png" alt="" />
         </div>
-        <div className="flex justify-center">
+        <p className="text-center px-24 text-sm font-bold mb-5 text-sky-950">Find and book deals on the best apartments in Dhaka, Bangladesh! Explore guest reviews and book the perfect apartment for your trip.Apartment List is a free service that helps you find the perfect apartment. Click to view move-in specials, photos, floorplans, rates, amenities and more...</p>
+        <div className="flex justify-center mt-16 mb-16">
         <input
-        type="text"
-        placeholder="Search by name..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="mb-4 w-[800px] h-16 p-2 border bg-yellow-100 text-red-950 font-bold border-gray-400 rounded"
-      />
+          type="text"
+          placeholder="Search property..."
+          value={searchQuery}
+          onChange={handleSearch}
+          className="border bg-pink-100 p-2 mr-4 md:w-[500px] w-[300px] h-16 "
+        />
+         
+        <button className="bg-red-600 md:w-[200px] w-[150px] h-16 font-bold text-white" onClick={sortByProname}>Sort by Proname</button>
+     
         </div>
-        <div className="flex justify-center mb-4">
-          <button className="btn bg-yellow-600 text-white hover:bg-red-300" onClick={toggleSortDirection}>
-            {sortDirection === "asc" ? "Sort Ascending" : "Sort Descending"}
-          </button>
-        </div>
+      
     </div>
     {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto items-center justify-center md:gap-16 gap-7 md:mt-16">
         {filteredData.map(item => <AllCardData key={item.Id} data={item}></AllCardData>)}
       </div> */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto items-center justify-center md:gap-16 gap-7 md:mt-16">
-        {sortedData.map(item => <AllCardData key={item.Id} data={item}></AllCardData>)}
+        {filteredData.map(item => <AllCardData key={item.Id} data={item}></AllCardData>)}
       </div>
       
             

@@ -13,7 +13,7 @@ import Dashboard from './Components/DashBoard/Dashboard';
 import Allproperty from './Components/AllProperty/Allproperty';
 import Myprofile from './Components/Myprop/Myprofile';
 import Wishlist from './Components/Wishlist/Wishlist';
-import Property from './Components/Property/Property';
+
 import Reviews from './Reviews/Reviews';
 import AuthProvider from './Components/AuthWork.jsx/AuthProvider';
 import Details from './Components/Details/Details';
@@ -22,11 +22,19 @@ import DesCart from './Components/DashBoard/DesCart';
 import MyReview from './Components/DashBoard/MyReview';
 import Propertyb from './Components/DashBoard/Propertyb';
 import Addwishlishform from './Components/ADDWIsHList/Addwishlishform';
-import Offer from './Components/Offer/Offer';
 import UserAll from './Components/Admin/UserAll';
 import AdminProfile from './Components/AWorkAdmin/AdminProfile';
 import AdminProperties from './Components/AWorkAdmin/AdminProperties';
 import AdminReviews from './Components/AWorkAdmin/AdminReviews';
+import Agentprofile from './Components/agentwork/Agentprofile';
+import AgentsoldProperty from './Components/agentwork/AgentsoldProperty';
+import Agentallproperty from './Components/agentwork/Agentallproperty';
+import RequstedProperties from './Components/agentwork/RequstedProperties';
+import MainOffer from './Components/Offer/MainOffer';
+import Verifydata from './Components/Verifydata/Verifydata';
+import AddItem from './Components/AllAgentProperty/AddItem';
+import AgentAdded from './Components/AllAgentProperty/AgentAdded';
+
 
 const router = createBrowserRouter([
   {
@@ -84,15 +92,21 @@ const router = createBrowserRouter([
         path:"/des/wishdata",
         element:<Wishlist></Wishlist>
       },{
-        path:"/des/rev",
+        path:"/des/rev/:email",
         element:<MyReview></MyReview>
       },{
         path:"/des/prob",
-        element:<Propertyb></Propertyb>
+        element:<Propertyb></Propertyb>,
+        loader:({params})=>fetch(`http://localhost:3000/approveddata/${params.id}`)
 
       },{
-        path:"/des/wish/offer",
-        element:<Offer></Offer>
+        path:"/des/wish/offer/:id",
+        element:<MainOffer></MainOffer>,
+        loader:({params})=>fetch(`http://localhost:3000/wishdata/${params.id}`)
+      },{
+        path:"/des/wish/update/:id",
+        element:<MainOffer></MainOffer>,
+        loader:({params})=>fetch(`http://localhost:3000/wishdata/${params.id}`)
       },{
         // admin
         path:"/des/userall",
@@ -103,11 +117,32 @@ const router = createBrowserRouter([
 
       },
       {
-        path:"/des/ad/prort",
-        element:<AdminProperties></AdminProperties>
+        path:'/des/g/allpro',
+        element:<Agentallproperty></Agentallproperty>
       },{
         path:"/des/ad/rev",
         element:<AdminReviews></AdminReviews>
+      },
+      // agent
+      {
+        path:"/des/g/pro",
+        element:<Agentprofile></Agentprofile>
+      },{
+        path:"/des/ad/req",
+        element:<RequstedProperties></RequstedProperties>
+      },{
+        path:"/des/g/mysold",
+        element:<AgentsoldProperty></AgentsoldProperty>
+      },{
+        path:'/des/ag/allpro',
+        element:<AgentAdded></AgentAdded>
+      },{
+        path:"/des/verify/:id",
+        element:<Verifydata></Verifydata>,
+        loader:({params})=>fetch(`http://localhost:3000/agentdata/${params.id}`)
+      },{
+        path:"/des/additem",
+        element:<AddItem></AddItem>
       }
     ]
   }
@@ -116,8 +151,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-<AuthProvider>
-<RouterProvider router={router}></RouterProvider>
-</AuthProvider>
+     
+       <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+      </AuthProvider>
+   
   </React.StrictMode>,
 )

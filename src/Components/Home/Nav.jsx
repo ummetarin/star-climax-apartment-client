@@ -23,7 +23,7 @@ const Nav = () => {
   }
 
     return (
-        <div className="navbar  py-4 shadow-sm  ">
+        <div className="navbar  py-4 shadow-sm w-full block ">
         <div className="flex md:flex-row gap-[100px] max-w-screen-xl  ">
         <div className="">
            <div className="dropdown">
@@ -44,15 +44,15 @@ const Nav = () => {
                </details>
              </ul>
            </div>
-          <div className="md:text-2xl text-xl font-bold flex flex-row md:gap-12 gap-28 items-center">
+          <div className="md:text-2xl text-sm font-bold flex flex-row md:gap-3 gap-3 items-center">
              <h1 className="text-2xl font-bold md:ml-6">STAR Climax</h1>
-             <img className="w-36 h-24" src="https://i.ibb.co/w0Tprzb/apppl-removebg-preview.png" alt="" />
+             <img className="w-24 h-24" src="https://i.ibb.co/fdZXyBc/png-transparent-logo-building-business-sales-industry-building-angle-building-apartment-removebg-pre.png" alt="" />
           </div>
          </div>
          <div className=" hidden lg:flex">
            <ul className="menu menu-horizontal px-1 gap-4 text-xl font-bold">
            <NavLink to={'/'}><li>Home</li></NavLink>
-           <NavLink to={'/all'}>  <li>All Product</li></NavLink>
+           <NavLink to={'/all'}><li>All Product</li></NavLink>
              
              <NavLink to={'/res'}><li>Register</li></NavLink>
              <details className="dropdown">
